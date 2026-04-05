@@ -1,0 +1,15 @@
+{
+  "name": "qa-automation-demoblaze-e2e",
+  "version": "1.0.0",
+  "description": "Framework de automatización E2E para la plataforma Demoblaze, desarrollado con Cypress, JavaScript y aplicando el patrón de diseño Page Object Model (POM).",
+  "main": "TestCase1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^15.13.0"
+  }
+}
