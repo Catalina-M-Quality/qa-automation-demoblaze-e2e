@@ -4,12 +4,21 @@
   "description": "Framework de automatización E2E para la plataforma Demoblaze, desarrollado con Cypress, JavaScript y aplicando el patrón de diseño Page Object Model (POM).",
   "main": "TestCase1.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "Limpiar-reporte": "npx rimraf ./allure-report && npx rimraf allure-results",
+    "ejecutar-pruebas": "npx cypress run --headed --env allure=true",
+    "generar-reporte": "npx allure generate allure-results -o allure-report --clean",
+    "abrir-reporte": "npx allure open allure-report",
+    "test": "npm run Limpiar-reporte && npm run ejecutar-pruebas && npm run generar-reporte && npm run abrir-reporte"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^15.13.0"
+    "cypress": "^15.13.0",
+    "rimraf": "^6.1.3"
+  },
+  "dependencies": {
+    "@shelex/cypress-allure-plugin": "^2.41.2",
+    "allure-commandline": "^2.38.1"
   }
 }
