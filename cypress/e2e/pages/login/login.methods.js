@@ -16,5 +16,4 @@ export class LoginMethods{
         this.insertPassword(password)
         this.clickOnLOginButton()
     }
-
 }
