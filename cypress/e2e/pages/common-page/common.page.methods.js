@@ -3,7 +3,7 @@ import { commondPageElements } from "./common-page.elements";
 
 export class commondPageMethods{
     static NavigateToDemoBlaze(){
-        cy.visist(commondPageData.url);
+        cy.visit(commondPageData.url);
     }
 
     static clickHomeOption(){
