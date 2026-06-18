@@ -5,6 +5,10 @@ import { SignuoMethods } from "../pages/login/signup/signup.methods";
 import { ThankYouForYouPurchaseMethods } from "../pages/thank-you-for-you-purchase/thank-you-for-you-purchase.methods";
 import { loger } from "../util/loger";
 
+const user = commondPageMethods.generateRandomString(10);
+const password = commondPageMethods.generateRandomString(7);
+
+
 describe(commondPageData.testSuits.registroYautenticacion, ()=>{
     it('Caso de prueba 1: Registro de usuario válido',()=>{
         
@@ -19,8 +23,8 @@ describe(commondPageData.testSuits.registroYautenticacion, ()=>{
 
         loger.stepNumber(3);
         loger.step('Completar todos los campos obligatorios con información válida');
-        SignuoMethods.insertUsername('usernameCata');
-        SignuoMethods.insertaPassword('psCata');
+        SignuoMethods.insertUsername(user);
+        SignuoMethods.insertaPassword(password);
 
         loger.stepNumber(4);
         loger.step('Hacer clic en "Sign up" para registrar el usuario.');
@@ -28,8 +32,7 @@ describe(commondPageData.testSuits.registroYautenticacion, ()=>{
         loger.verification('Verificar que se muestre el mensaje "Sign up successful."');
         SignuoMethods.verifiySignUpSuccesfulMessageDisplayed();
 
-        
-      
+             
       
     });
 
