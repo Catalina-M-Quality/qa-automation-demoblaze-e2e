@@ -18,5 +18,8 @@ export class HomeMethods{
         HomeElemenst.product(productname).click();
     }
 
+    static verifyProductDisplayed(productName){
+        HomeElemenst.product(productName).should('be.visible');
+    }
 
 }
