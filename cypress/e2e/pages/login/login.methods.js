@@ -1,4 +1,5 @@
 import { loger } from "../../util/loger";
+import { commondPageMethods } from "../common-page/common.page.methods";
 import { LoginElements } from "./login.elements";
 
 export class LoginMethods{
@@ -20,4 +21,9 @@ export class LoginMethods{
         loger.supStep('Click on login button')
         this.clickOnLOginButton()
     }
+
+    static verifyWrongpasswordMessage(){
+        commondPageMethods.VerifyAlert('Wrong password.');
+    }
+
 }
