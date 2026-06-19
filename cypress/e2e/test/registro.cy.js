@@ -1,5 +1,6 @@
 import { commondPageData } from "../pages/common-page/common-page.data"
 import { commondPageMethods } from "../pages/common-page/common.page.methods";
+import { LoginData } from "../pages/login/login.data";
 import { LoginMethods } from "../pages/login/login.methods";
 import { SignuoMethods } from "../pages/login/signup/signup.methods";
 import { ThankYouForYouPurchaseMethods } from "../pages/thank-you-for-you-purchase/thank-you-for-you-purchase.methods";
@@ -7,7 +8,7 @@ import { loger } from "../util/loger";
 
 const user = commondPageMethods.generateRandomString(10);
 const password = commondPageMethods.generateRandomString(7);
-const existingUser = 'random01';
+const existingUser = LoginData.validCredentials.username;
 
 
 describe(commondPageData.testSuits.registro, ()=>{

@@ -32,19 +32,22 @@ export class commondPageMethods{
     }
 
     static VerifyAlert(expectedMessage){
-            cy.on('window:alert', (str) => {
+        cy.on('window:alert', (str) => {
             expect(str).to.eq(expectedMessage);
-            done();
-       })
+        });
     }
 
     static generateRandomString(length=10) {
-    var result           = '';
-    var characters       = 'abcdefghijklmnopqrstuvwxyz0123456789';
-    var charactersLength = characters.length;
-    for ( var i = 0; i < length; i++ ) {
-        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        var result           = '';
+        var characters       = 'abcdefghijklmnopqrstuvwxyz0123456789';
+        var charactersLength = characters.length;
+        for ( var i = 0; i < length; i++ ) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
     }
-    return result;
-}
+
+    static verifySignedUser(username){
+        commondPageElements.signedUser.should('have.text',`Welcome ${username}`);
+    }
 }
