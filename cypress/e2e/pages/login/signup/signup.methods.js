@@ -19,7 +19,7 @@ export class SignuoMethods{
     }
 
     static verifiySignUpSuccesfulMessageDisplayed(){
-        commondPageMethods.VerifyAlert('Sign up sucessfull');
+        commondPageMethods.VerifyAlert('Sign up sucessful');
     }
 
     static verifyThatThisUserAlredyExistMessageIsDisplayed(){

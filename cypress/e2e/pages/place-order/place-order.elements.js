@@ -14,7 +14,7 @@ export class PlaceOrderDataElements{
             get creditCard(){
                 return cy.get('input#card');
             },
-            get Month(){
+            get month(){
                 return cy.get('input#month');
             },
             get year(){

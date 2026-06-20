@@ -17,11 +17,11 @@ export class PlaceOrderDataMethods{
         PlaceOrderDataElements.textboxes.creditCard.invoke('val',creditCard);
     }
 
-    static insertMonth(Month){
-        PlaceOrderDataElements.textboxes.Month.invoke('val',Month);
+    static insertmonth(month){
+        PlaceOrderDataElements.textboxes.month.invoke('val',month);
     }
 
-    static insertYear(yerar){
+    static insertYear(year){
         PlaceOrderDataElements.textboxes.year.invoke('val',year);
     }
 
@@ -29,8 +29,17 @@ export class PlaceOrderDataMethods{
         PlaceOrderDataElements.Buttons.Close.click();
     }
 
-    static clickOnClosePurchase(){
+    static clickOnPurchaseButton(){
         PlaceOrderDataElements.Buttons.purchase.click();
+    }
+
+    static insertOrderInformation(information){
+        this.insertName(information.name);
+        this.insertCountry(information.country);
+        this.insertCity(information.city);
+        this.insertCreditCard(information.creditCard);
+        this.insertmonth(information.month);
+        this.insertYear(information.year);
     }
 
 }

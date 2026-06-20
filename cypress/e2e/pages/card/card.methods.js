@@ -8,4 +8,12 @@ export class cardMetods{
     static verifyProductAdded(productName){
         cardElements.links.delete(productName).should('be.visible');
     }
+
+    static verifyCardPageIsShown(){
+        cy.url().should('include', 'cart.html');
+    }
+
+    static clickOnPlabeOrderButton(){
+        cardElements.buttons.placeOrder.click();
+    }
 }

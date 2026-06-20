@@ -2,10 +2,10 @@ import { ThankYouForYouPurchaseElements } from "./thank-you-for-you-purchase.ele
 
 export class ThankYouForYouPurchaseMethods{
         static clickOnOk(){
-            ThankYouForYouPurchaseElements.buttons.click();
+            ThankYouForYouPurchaseElements.buttons.Ok.click();
         }
 
         static verifyGreenCheckmarkIsDisplayed(){
-            ThankYouForYouPurchaseElements.Icons.greenCheckMar.should('exixt');
+            ThankYouForYouPurchaseElements.Icons.greenCheckMar.should('exist');
         }
 }
