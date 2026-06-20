@@ -15,7 +15,7 @@ const product = 'ASUS Full HD';
 
 
 describe(commondPageData.testSuits.CatalogoYcompras, ()=>{
-    it.skip('Navegación por categorías',()=>{
+    it('Navegación por categorías',()=>{
         loger.stepNumber(1);
         loger.step('Iniciar sesión como usuario registrado.');
         loger.supStep('Navegar TO Demoblaze application');
@@ -36,7 +36,7 @@ describe(commondPageData.testSuits.CatalogoYcompras, ()=>{
         HomeMethods.verifyProductDisplayed('ASUS Full HD');
     })
 
-    it.skip('Agregar producto al carrito',()=>{
+    it('Agregar producto al carrito',()=>{
         loger.stepNumber(1);
         loger.step('Iniciar sesión como usuario registrado.');
         loger.supStep('Navegar TO Demoblaze application');
