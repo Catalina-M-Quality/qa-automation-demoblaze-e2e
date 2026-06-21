@@ -29,6 +29,7 @@ export class PlaceOrderDataElements{
             get Close(){
                 return cy.get('div[id="orderModal"] button').eq(1);
             },
+            
             get purchase(){
                 return cy.contains('button', 'Purchase');
             },

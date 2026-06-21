@@ -3,7 +3,8 @@ import { commondPageElements } from "./common-page.elements";
 
 export class commondPageMethods{
     static NavigateToDemoBlaze(){
-        cy.clearCookies();
+        cy.clearAllCookies();
+        cy.clearLocalStorage();
         cy.visit(commondPageData.url);
     }
 
