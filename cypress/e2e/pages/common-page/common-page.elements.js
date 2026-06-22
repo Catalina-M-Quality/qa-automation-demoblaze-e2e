@@ -18,12 +18,15 @@ export class commondPageElements{
                 return cy.contains('a', 'Log in');
             },
 
-             get LogOut(){
-                return cy.contains('a', 'Log out');
-            },
-
+      
             get SignUp(){
                 return cy.contains('a', 'Sign up');
+            },
+
+            
+        
+            get logout(){
+                return cy.contains('a', 'Log out');
             },
 
         };

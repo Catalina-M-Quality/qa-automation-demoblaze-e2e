@@ -27,7 +27,10 @@ describe(commondPageData.testSuits.autenticacion, ()=>{
         LoginMethods.clickOnLOginButton();
         loger.verification('Paso 5: Verificar que se redirige al usuario a la página de inicio.');
         commondPageMethods.verifySignedUser(LoginData.validCredentials.username);
-     
+
+        loger.postCondition('log Out');
+        commondPageMethods.logout();
+
     });
 
 

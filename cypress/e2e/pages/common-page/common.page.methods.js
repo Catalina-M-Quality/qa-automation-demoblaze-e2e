@@ -62,4 +62,17 @@ export class commondPageMethods{
     static verifySignedUser(username){
         commondPageElements.signedUser.should('have.text',`Welcome ${username}`);
     }
+
+    static logout(){
+    // Buscamos en el body si existe el ID #logout2 usando jQuery directo de Cypress ($)
+    cy.get('body').then(($body) => {
+        if ($body.find('#logout2:visible').length > 0) {
+            // Si el botón está visible, significa que está logueado -> Hacemos clic
+            commondPageElements.topMenu.logout.click();
+        } else {
+            // Si no lo encuentra, escribe un mensaje en el log y el test continúa feliz
+             cy.log('El usuario no estaba logueado, se salta el logout.');
+        }
+    });
+}
 }
