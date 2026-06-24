@@ -6,6 +6,7 @@ export class commondPageMethods{
         cy.clearAllCookies();
         cy.clearLocalStorage();
         cy.visit(commondPageData.url);
+        commondPageMethods.clickHomeOption();
     }
 
     static clickHomeOption(){
