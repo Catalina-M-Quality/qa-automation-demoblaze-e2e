@@ -32,8 +32,12 @@ export class cardMetods{
         commondPageMethods.clickLoginOption();
         cy.log(`Login with credentials ${username}/${password}`);
         LoginMethods.login(username, password);
+        // 1. BUENA PRÁCTICA: Interceptamos la petición que carga el carrito ANTES de ir a la página
+        cy.intercept('POST', 'https://api.demoblaze.com/viewcart').as('getCartItems');
         loger.supStep('Click on Cart option');
         commondPageMethods.clickCartOption();
+        // Esperamos de forma dinámica a que la petición termine (Reemplaza el cy.wait(2000) azul)
+        cy.wait('@getCartItems');
         loger.supStep('Delete products from cart');
         this.deleteProducts();
     }
@@ -41,8 +45,8 @@ export class cardMetods{
 
     static deleteProducts() {
         // 1. Esperamos 2 segundos fijos para que DemoBlaze termine de cargar los datos de la cuenta
-        cy.wait(2000);
-
+        cy.intercept('POST', 'https://api.demoblaze.com/deleteitem').as('deleteItem');
+      
         // 2. Revisamos el DOM de forma segura
         cy.get('body').then(($body) => {
             // Si encuentra botones de eliminar, procedemos a borrarlos todos
@@ -51,7 +55,7 @@ export class cardMetods{
                 
                 cy.get('a[onclick^="deleteItem"]').each(($el) => {
                     cy.wrap($el).click();
-                    cy.wait(1000); // Espera entre clicks para que el DOM no se vuelva inestable
+                    cy.wait('@deleteItem'); // Espera entre clicks para que el DOM no se vuelva inestable
                 });
 
                 // Volvemos a verificar por si acaso se requiera otra pasada
