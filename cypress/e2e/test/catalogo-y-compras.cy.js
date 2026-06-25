@@ -34,6 +34,9 @@ describe(commondPageData.testSuits.CatalogoYcompras, ()=>{
         loger.verification('Verificar que se muestra la lista de productos correspondiente a la categoría seleccionada.');
         HomeMethods.verifyProductDisplayed('Apple monitor 24');
         HomeMethods.verifyProductDisplayed('ASUS Full HD');
+
+        loger.postCondition('log Out');
+        commondPageMethods.logout();
     })
 
     it('Agregar producto al carrito',()=>{
@@ -70,6 +73,10 @@ describe(commondPageData.testSuits.CatalogoYcompras, ()=>{
         ProductDetailsMethods.verifyProductAddedMessage();
         commondPageMethods.clickCartOption();
         cardMetods.verifyProductAdded(product);
+
+        loger.postCondition('Empty cart and logout');
+        cardMetods.emptyCart(user.username,user.password);
+        commondPageMethods.logout();
     })
 
      it('Realizar una compra',()=>{
@@ -133,6 +140,9 @@ describe(commondPageData.testSuits.CatalogoYcompras, ()=>{
         ThankYouForYouPurchaseMethods.clickOnOk();
         commondPageMethods.clickHomeOption();
         HomeMethods.verifyHomePageIsShown();
+
+        loger.postCondition('logout');
+        commondPageMethods.logout();
         
     })
 
