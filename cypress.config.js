@@ -5,6 +5,7 @@ module.exports = defineConfig({
   retries: 1,
   e2e: {
     chromeWebSecurity: false,
+    defaultCommandTimeout: 10000, // <--- Se agrega aquí (tiempo de espera en milisegundos, ej. 10 seg)
     setupNodeEvents(on, config) {
       allureWriter(on, config);
       return config;
