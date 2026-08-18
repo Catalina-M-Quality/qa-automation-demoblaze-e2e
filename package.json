@@ -5,7 +5,7 @@
   "main": "TestCase1.js",
   "scripts": {
     "Limpiar-reporte": "npx rimraf ./allure-report && npx rimraf allure-results",
-    "ejecutar-pruebas": "npx cypress run --headed --env allure=true",
+    "ejecutar-pruebas": "npx cypress run --env allure=true",
     "generar-reporte": "npx allure generate allure-results -o allure-report --clean",
     "abrir-reporte": "npx allure open allure-report",
     "test": "npm run Limpiar-reporte && npm run ejecutar-pruebas && npm run generar-reporte && npm run abrir-reporte",
