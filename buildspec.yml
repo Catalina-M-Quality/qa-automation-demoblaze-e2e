@@ -16,3 +16,4 @@ phases:
       - npm run generar-reporte || true
       # Sincroniza la carpeta del reporte con S3 (S3 asigna los Content-Type de forma automática)
       - aws s3 sync allure-report/ s3://contenedor-reporte-de-pruebas/ --delete
+      - echo "The HTML report can be found here <https://contenedor-reporte-de-pruebas.s3.us-east-2.amazonaws.com/index.html>"
