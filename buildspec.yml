@@ -14,6 +14,5 @@ phases:
   post_build:
     commands: 
       - npm run generar-reporte || true
-      # Subir asignando los tipos MIME correctos
-      - aws s3 sync allure-report s3://contenedor-reporte-de-pruebas/ --content-type-mime-type
-      - aws s3 cp --recursive --acl public-read s3://contenedor-reporte-de-pruebas/ s3://contenedor-reporte-de-pruebas/ --metadata-directive REPLACE
+      # Sincroniza la carpeta del reporte con S3 (S3 asigna los Content-Type de forma automática)
+      - aws s3 sync allure-report/ s3://contenedor-reporte-de-pruebas/ --delete
