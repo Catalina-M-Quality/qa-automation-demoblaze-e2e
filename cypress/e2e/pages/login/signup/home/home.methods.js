@@ -12,6 +12,7 @@ export class HomeMethods{
     
     static clickOnMonitorsOption(){
         HomeElemenst.CategoriesMenu.Monitors.click();
+        cy.wait(1000);
     }
 
     static clcikOnProductLink(productname){
