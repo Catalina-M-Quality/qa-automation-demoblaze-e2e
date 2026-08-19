@@ -13,8 +13,7 @@ phases:
       - npm run cy:parallel || true
   post_build:
     commands: 
-      # Genera el reporte de Allure antes de subirlo
       - npm run generar-reporte || true
-      # Sincroniza y aplica los permisos sobre tu bucket
-      - aws s3 sync allure-report s3://contenedor-reporte-de-pruebas/
+      # Subir asignando los tipos MIME correctos
+      - aws s3 sync allure-report s3://contenedor-reporte-de-pruebas/ --content-type-mime-type
       - aws s3 cp --recursive --acl public-read s3://contenedor-reporte-de-pruebas/ s3://contenedor-reporte-de-pruebas/ --metadata-directive REPLACE
